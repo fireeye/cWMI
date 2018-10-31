@@ -1,0 +1,285 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>cwmi package &#8212; cwmi  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="cwmi-package">
+<h1>cwmi package<a class="headerlink" href="#cwmi-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-cwmi">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cwmi" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="cwmi.call_method">
+<code class="descclassname">cwmi.</code><code class="descname">call_method</code><span class="sig-paren">(</span><em>namespace</em>, <em>obj_path</em>, <em>method_name</em>, <em>input_params=None</em>, <em>user=None</em>, <em>password=None</em>, <em>flags=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cwmi.call_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls object method</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>namespace (str): Namespace to connect to
+obj_path (str): Path to object instance/class
+method_name (str): Name of the method to call
+input_params (dict): Method input parameters
+user (str): Username to use when connecting to remote system
+password (str): Password to use for remote connection
+flags (int): Flags to pass into WMI API(s)</dd>
+<dt>Returns:</dt>
+<dd>Dictionary containing data returned from the called method</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cwmi.create_variant">
+<code class="descclassname">cwmi.</code><code class="descname">create_variant</code><span class="sig-paren">(</span><em>val</em>, <em>v_type=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cwmi.create_variant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a VARIANT instance from a given value</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>val (any): The value to use when creating the VARIANT instance
+v_type (int): Variant type</dd>
+<dt>Returns:</dt>
+<dd>Initialized VARIANT instance</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cwmi.destroy_variant">
+<code class="descclassname">cwmi.</code><code class="descname">destroy_variant</code><span class="sig-paren">(</span><em>var</em><span class="sig-paren">)</span><a class="headerlink" href="#cwmi.destroy_variant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destroys an instance of a VARIANT</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>var (VARIANT): Instance to destroy</dd>
+<dt>Returns:</dt>
+<dd>Nothing</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cwmi.does_object_exist">
+<code class="descclassname">cwmi.</code><code class="descname">does_object_exist</code><span class="sig-paren">(</span><em>namespace</em>, <em>obj_name</em>, <em>user=None</em>, <em>password=None</em>, <em>flags=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cwmi.does_object_exist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests if a given object exists</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>namespace (str): Namespace to connect to
+obj_name (str): Path to object instance/class
+user (str): Username to use when connecting to remote system
+password (str): Password to use for remote connection
+flags (int): Flags to pass into WMI API(s)</dd>
+<dt>Returns:</dt>
+<dd>True if object exists, or False if not</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cwmi.get_all_object_info">
+<code class="descclassname">cwmi.</code><code class="descname">get_all_object_info</code><span class="sig-paren">(</span><em>namespace</em>, <em>obj_name</em>, <em>user=None</em>, <em>password=None</em>, <em>include_var_type=False</em>, <em>flags=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cwmi.get_all_object_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets all data from an object</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>namespace (str): Namespace to connect to
+obj_name (str): Path to object instance/class
+user (str): Username to use when connecting to remote system
+password (str): Password to use for remote connection
+include_var_type (bool): Include variant type
+flags (int): Flags to pass into WMI API(s)</dd>
+<dt>Returns:</dt>
+<dd>Dictionary containing object data</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cwmi.get_method_info">
+<code class="descclassname">cwmi.</code><code class="descname">get_method_info</code><span class="sig-paren">(</span><em>namespace</em>, <em>obj_name</em>, <em>user=None</em>, <em>password=None</em>, <em>flags=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cwmi.get_method_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets method information for a given object/method</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>namespace (str): Namespace to connect to
+obj_name (str): Path to object instance/class
+user (str): Username to use when connecting to remote system
+password (str): Password to use for remote connection
+flags (int): Flags to pass into WMI API(s)</dd>
+<dt>Returns:</dt>
+<dd>Dictionary containing method parameter info</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cwmi.get_method_names">
+<code class="descclassname">cwmi.</code><code class="descname">get_method_names</code><span class="sig-paren">(</span><em>namespace</em>, <em>obj_name</em>, <em>user=None</em>, <em>password=None</em>, <em>flags=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cwmi.get_method_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets all method names from a given object</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>namespace (str): Namespace to connect to
+obj_name (str): Path to object instance/class
+user (str): Username to use when connecting to remote system
+password (str): Password to use for remote connection
+flags (int): Flags to pass into WMI API(s)</dd>
+<dt>Returns:</dt>
+<dd>List of method names</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cwmi.get_object_info">
+<code class="descclassname">cwmi.</code><code class="descname">get_object_info</code><span class="sig-paren">(</span><em>namespace</em>, <em>obj_name</em>, <em>values</em>, <em>user=None</em>, <em>password=None</em>, <em>include_var_type=False</em>, <em>flags=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cwmi.get_object_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets desired values from an object.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>namespace (str): Namespace to connect to
+obj_name (str): Path to object instance/class
+values (list): List of values to pull from object
+user (str): Username to use when connecting to remote system
+password (str): Password to use for remote connection
+include_var_type (bool): Include variant type
+flags (int): Flags to pass into WMI API(s)</dd>
+<dt>Returns:</dt>
+<dd>Dictionary containing object data</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cwmi.get_object_names">
+<code class="descclassname">cwmi.</code><code class="descname">get_object_names</code><span class="sig-paren">(</span><em>namespace</em>, <em>obj_name</em>, <em>user=None</em>, <em>password=None</em>, <em>flags=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cwmi.get_object_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets all names from a given object</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>namespace (str): Namespace to connect to
+obj_name (str): Path to object instance/class
+user (str): Username to use when connecting to remote system
+password (str): Password to use for remote connection
+flags (int): Flags to pass into WMI API(s)</dd>
+<dt>Returns:</dt>
+<dd>List containing object names</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cwmi.obj_to_dict">
+<code class="descclassname">cwmi.</code><code class="descname">obj_to_dict</code><span class="sig-paren">(</span><em>obj</em>, <em>include_var_type=False</em>, <em>flags=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cwmi.obj_to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts WMI object to python dictionary</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>obj (any): The object to convert
+include_var_type (bool): Include variant type
+flags (int): Flags to pass into WMI API(s)</dd>
+<dt>Returns:</dt>
+<dd>Dictionary containing object information</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cwmi.query">
+<code class="descclassname">cwmi.</code><code class="descname">query</code><span class="sig-paren">(</span><em>namespace</em>, <em>query_str</em>, <em>query_type='WQL'</em>, <em>user=None</em>, <em>password=None</em>, <em>include_var_type=False</em>, <em>flags=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cwmi.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a WMI query</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>namespace (str): Namespace to connect to
+query_str (str): String to use for the query
+query_type (str): Path to object instance/class
+user (str): Username to use when connecting to remote system
+password (str): Password to use for remote connection
+include_var_type (bool): Include variant type
+flags (int): Flags to pass into WMI API(s)</dd>
+<dt>Returns:</dt>
+<dd>Dictionary containing all objects returned by query</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cwmi.safe_array_to_list">
+<code class="descclassname">cwmi.</code><code class="descname">safe_array_to_list</code><span class="sig-paren">(</span><em>safe_array</em>, <em>element_type</em><span class="sig-paren">)</span><a class="headerlink" href="#cwmi.safe_array_to_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts SAFEARRAY structure to python list</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>safe_array (SAFEARRAY): Array structure to convert
+element_type (any): Type of the elements contained in the structure</dd>
+<dt>Returns:</dt>
+<dd>List containing the converted array elements</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">cwmi package</a><ul>
+<li><a class="reference internal" href="#module-cwmi">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/cwmi.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, FireEye.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/cwmi.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
