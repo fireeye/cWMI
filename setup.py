@@ -25,7 +25,7 @@ if system != 'Windows':
 
 
 setup(name='cwmi',
-      version='0.0.1',
+      version='0.1.0',
       description='ctypes wrapper for WMI',
       author='Anthony Berglund',
       author_email='anthony.berglund@fireeye.com',
